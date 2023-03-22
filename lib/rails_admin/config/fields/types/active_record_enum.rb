@@ -45,6 +45,8 @@ module RailsAdmin
         private
 
           def parse_input_value(value)
+            return nil if value == ''
+
             abstract_model.model.attribute_types[name.to_s].deserialize(value)
           end
 
